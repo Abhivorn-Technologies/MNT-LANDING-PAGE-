@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="16" fill="#FFFFFF"/>
+  <!-- Outer markers -->
+  <rect x="20" y="20" width="50" height="50" rx="8" fill="#050505"/>
+  <rect x="30" y="30" width="30" height="30" rx="4" fill="#FFFFFF"/>
+  <rect x="38" y="38" width="14" height="14" rx="2" fill="#FA4C00"/>
+  
+  <rect x="130" y="20" width="50" height="50" rx="8" fill="#050505"/>
+  <rect x="140" y="30" width="30" height="30" rx="4" fill="#FFFFFF"/>
+  <rect x="148" y="38" width="14" height="14" rx="2" fill="#FA4C00"/>
+  
+  <rect x="20" y="130" width="50" height="50" rx="8" fill="#050505"/>
+  <rect x="30" y="140" width="30" height="30" rx="4" fill="#FFFFFF"/>
+  <rect x="38" y="148" width="14" height="14" rx="2" fill="#FA4C00"/>
+  
+  <!-- QR Grid Pattern -->
+  <rect x="80" y="25" width="12" height="12" fill="#050505"/>
+  <rect x="100" y="25" width="12" height="24" fill="#050505"/>
+  <rect x="80" y="55" width="24" height="12" fill="#FA4C00"/>
+  <rect x="25" y="85" width="24" height="12" fill="#050505"/>
+  <rect x="60" y="85" width="12" height="24" fill="#050505"/>
+  <rect x="85" y="85" width="30" height="30" rx="4" fill="#FA4C00"/>
+  <rect x="130" y="85" width="24" height="12" fill="#050505"/>
+  <rect x="165" y="85" width="15" height="30" fill="#050505"/>
+  <rect x="80" y="130" width="15" height="45" fill="#050505"/>
+  <rect x="110" y="130" width="30" height="15" fill="#050505"/>
+  <rect x="150" y="130" width="25" height="25" fill="#FA4C00"/>
+  <rect x="110" y="160" width="40" height="15" fill="#050505"/>
+</svg>

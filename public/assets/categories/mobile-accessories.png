@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+    <defs>
+      <linearGradient id="catBg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#151518"/>
+        <stop offset="100%" stop-color="#0D0D10"/>
+      </linearGradient>
+      <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#FA4C00"/>
+        <stop offset="100%" stop-color="#FFBD59"/>
+      </linearGradient>
+      <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+        <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.4"/>
+      </filter>
+    </defs>
+    <rect width="400" height="300" rx="24" fill="url(#catBg)"/>
+    <!-- Decorative circles -->
+    <circle cx="330" cy="70" r="100" fill="#FFFFFF" opacity="0.04"/>
+    <circle cx="70" cy="240" r="80" fill="#FA4C00" opacity="0.08"/>
+    <!-- Center Graphic Icon Container -->
+    <g filter="url(#shadow)">
+      <rect x="130" y="60" width="140" height="140" rx="32" fill="#16161A" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+      <rect x="130" y="60" width="140" height="140" rx="32" fill="url(#badgeGrad)" opacity="0.08"/>
+      <rect x="175" y="95" width="50" height="75" rx="10" stroke="#0EA5E9" stroke-width="4.5" fill="#0EA5E9" fill-opacity="0.15"/><circle cx="200" cy="155" r="3" fill="#0EA5E9"/><path d="M190 103H210" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- Label -->
+    <rect x="30" y="225" width="340" height="48" rx="14" fill="#121215" stroke="rgba(255,255,255,0.08)"/>
+    <text x="50" y="255" fill="#FFFFFF" font-family="Outfit, Inter, sans-serif" font-weight="700" font-size="18">Mobile Accessories</text>
+    <circle cx="340" cy="249" r="14" fill="#FA4C00" fill-opacity="0.2"/>
+    <path d="M336 244L344 249L336 254" stroke="#FA4C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>

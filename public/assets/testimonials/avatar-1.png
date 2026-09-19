@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+    <defs>
+      <linearGradient id="avGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FA4C00"/>
+        <stop offset="100%" stop-color="#FF7A00"/>
+      </linearGradient>
+    </defs>
+    <circle cx="80" cy="80" r="80" fill="url(#avGrad)"/>
+    <circle cx="80" cy="80" r="76" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.2"/>
+    <text x="80" y="95" fill="#FFFFFF" font-family="Outfit, Inter, sans-serif" font-weight="800" font-size="44" text-anchor="middle">PS</text>
+  </svg>

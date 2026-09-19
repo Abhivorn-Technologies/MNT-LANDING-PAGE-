@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-orange: #FA4C00;
+    --brand-orange-light: #FFBD59;
+    --brand-black: #050505;
+    --brand-dark: #111111;
+    --brand-cream: #FFF8EF;
+    --brand-white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #050505;
+    color: #FFFFFF;
+    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    selection-background-color: #FA4C00;
+    selection-color: #FFFFFF;
+  }
+
+  ::selection {
+    background: #FA4C00;
+    color: #FFFFFF;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D10;
+}
+::-webkit-scrollbar-thumb {
+  background: #262630;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FA4C00;
+}
+
+/* Glassmorphism & Surface Utilities */
+.glass-panel {
+  background: rgba(22, 22, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-orange {
+  background: linear-gradient(135deg, rgba(250, 76, 0, 0.08) 0%, rgba(255, 189, 89, 0.04) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(250, 76, 0, 0.2);
+}
+
+.glass-nav {
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FA4C00 0%, #FFBD59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(135deg, #FA4C00 0%, #FF7A00 50%, #FFBD59 100%);
+}
+
+.orange-glow {
+  box-shadow: 0 0 40px -5px rgba(250, 76, 0, 0.4);
+}
+
+.orange-glow-sm {
+  box-shadow: 0 0 20px -3px rgba(250, 76, 0, 0.35);
+}
+
+/* Replayable Scroll Reveal Animation System */
+/* When in view, .revealed or .is-visible is applied; when out of view, it resets */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays */
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+[data-delay="400"] { transition-delay: 400ms; }
+[data-delay="500"] { transition-delay: 500ms; }
+[data-delay="600"] { transition-delay: 600ms; }
+
+/* Animation Types */
+[data-reveal="fade-up"] {
+  transform: translateY(40px);
+}
+[data-reveal="fade-up"].revealed {
+  transform: translateY(0);
+}
+
+[data-reveal="fade-down"] {
+  transform: translateY(-40px);
+}
+[data-reveal="fade-down"].revealed {
+  transform: translateY(0);
+}
+
+[data-reveal="fade-left"] {
+  transform: translateX(-50px);
+}
+[data-reveal="fade-left"].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal="fade-right"] {
+  transform: translateX(50px);
+}
+[data-reveal="fade-right"].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal="scale-in"] {
+  transform: scale(0.92);
+  filter: blur(4px);
+}
+[data-reveal="scale-in"].revealed {
+  transform: scale(1);
+  filter: blur(0px);
+}
+
+[data-reveal="blur-in"] {
+  filter: blur(12px);
+  transform: translateY(20px);
+}
+[data-reveal="blur-in"].revealed {
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+/* Reduced Motion preference */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow,
+  .animate-pulseGlow {
+    animation: none !important;
+  }
+}
