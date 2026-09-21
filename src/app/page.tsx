@@ -10,7 +10,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FeaturedDeals } from "@/components/sections/FeaturedDeals";
 import { UserAppShowcase } from "@/components/sections/UserAppShowcase";
 import { VendorSection } from "@/components/sections/VendorSection";
-import { RaiderSection } from "@/components/sections/RaiderSection";
+import { RiderSection } from "@/components/sections/RaiderSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { DownloadApp } from "@/components/sections/DownloadApp";
@@ -51,8 +51,8 @@ export default function Home() {
         {/* 08: Vendor Section */}
         <VendorSection />
 
-        {/* 09: Raider Section */}
-        <RaiderSection />
+        {/* 09: Rider Section */}
+        <RiderSection />
 
         {/* 10: Why Choose Multi New Trends */}
         <WhyChooseUs />

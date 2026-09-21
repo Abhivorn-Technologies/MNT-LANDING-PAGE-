@@ -18,7 +18,7 @@ export const CONTACT_SUBJECTS = [
   "General Inquiry",
   "Order & Delivery Support",
   "Become a Vendor Partner",
-  "Join as a Raider Partner",
+  "Join as a Rider Partner",
   "Business & Corporate Partnerships",
   "Feedback & Suggestions",
 ];

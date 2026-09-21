@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { NAV_ITEMS } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
 import { Search, Menu, X, Download, Sparkles } from "lucide-react";
@@ -57,8 +58,8 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
             {/* Official Multi New Trends Logo */}
-            <a
-              href="#home"
+            <Link
+              href="/"
               className="flex items-center shrink-0 focus:outline-none focus:ring-2 focus:ring-[#FA4C00]/40 rounded-lg p-0.5 transition-transform hover:opacity-95"
               aria-label="Multi New Trends Home"
             >
@@ -72,14 +73,14 @@ export const Navbar: React.FC = () => {
                   className="h-10 sm:h-11 md:h-12 w-auto object-contain max-w-[180px] sm:max-w-[220px] md:max-w-[260px]"
                 />
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F2E8D2]/70 border border-[#E5DAC0]">
               {NAV_ITEMS.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
-                  <a
+                  <Link
                     key={item.id}
                     href={item.href}
                     className={cn(
@@ -93,7 +94,7 @@ export const Navbar: React.FC = () => {
                     {isActive && (
                       <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#FA4C00] rounded-full" />
                     )}
-                  </a>
+                  </Link>
                 );
               })}
             </nav>
@@ -114,7 +115,7 @@ export const Navbar: React.FC = () => {
               <Button
                 variant="primary"
                 size="md"
-                href="#download"
+                href="/#download"
                 icon={<Download className="w-4 h-4" />}
                 className="shadow-[0_4px_16px_rgba(250,76,0,0.3)] hover:shadow-[0_6px_22px_rgba(250,76,0,0.45)]"
               >
@@ -154,7 +155,7 @@ export const Navbar: React.FC = () => {
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <a
+                <Link
                   key={item.id}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
@@ -166,7 +167,7 @@ export const Navbar: React.FC = () => {
                   )}
                 >
                   {item.label}
-                </a>
+                </Link>
               );
             })}
             <div className="pt-3">
@@ -174,7 +175,7 @@ export const Navbar: React.FC = () => {
                 variant="primary"
                 fullWidth
                 size="lg"
-                href="#download"
+                href="/#download"
                 onClick={() => setMobileMenuOpen(false)}
                 icon={<Download className="w-4 h-4" />}
               >

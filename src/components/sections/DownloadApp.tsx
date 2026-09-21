@@ -73,10 +73,10 @@ export const DownloadApp: React.FC = () => {
 
                 {/* QR Code Container */}
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
-                  <div className="w-20 h-20 bg-white p-1 rounded-xl shrink-0 shadow-md">
+                  <div className="w-20 h-20 bg-white p-1 rounded-xl shrink-0 shadow-md relative overflow-hidden flex items-center justify-center">
                     <Image
-                      src="/assets/decorative/qr-code.png"
-                      alt="Scan to Download MN Trends App"
+                      src="/assets/categories/QR.png"
+                      alt="Scan to Install"
                       width={80}
                       height={80}
                       className="w-full h-full object-contain"
@@ -97,13 +97,14 @@ export const DownloadApp: React.FC = () => {
             <div className="lg:col-span-5 flex justify-center lg:justify-end" data-reveal="fade-left">
               <div className="relative w-[260px] sm:w-[300px] animate-float">
                 <div className="rounded-[44px] p-2.5 bg-gradient-to-b from-[#353545] to-[#121218] border border-mnt-orange/50 shadow-glow">
-                  <div className="rounded-[36px] overflow-hidden bg-mnt-black">
+                  <div className="relative rounded-[36px] overflow-hidden bg-mnt-black aspect-[941/1672] isolate [transform:translateZ(0)]">
                     <Image
-                      src="/assets/hero/phone-01.png"
-                      alt="Download MN Trends App"
-                      width={300}
-                      height={600}
-                      className="w-full h-auto object-cover"
+                      src="/assets/categories/PH SS-3.png"
+                      alt="Multi New Trends App"
+                      fill
+                      sizes="(max-width: 640px) 260px, 300px"
+                      className="object-cover w-full h-full block"
+                      priority
                     />
                   </div>
                 </div>

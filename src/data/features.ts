@@ -48,7 +48,7 @@ export const VENDOR_FEATURES: string[] = [
   "Customer Reach",
 ];
 
-export const RAIDER_FEATURES: string[] = [
+export const RIDER_FEATURES: string[] = [
   "Flexible Deliveries",
   "Smart Order Management",
   "Reliable Earnings",

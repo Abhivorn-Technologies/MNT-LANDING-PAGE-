@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Gadgets and Electronics",
     "Fashion Trends",
     "Vendor App",
-    "Raider App",
+    "Rider App",
   ],
   authors: [{ name: "Multi New Trends" }],
   icons: {

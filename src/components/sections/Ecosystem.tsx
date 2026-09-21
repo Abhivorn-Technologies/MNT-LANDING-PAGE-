@@ -37,14 +37,14 @@ export const Ecosystem: React.FC = () => {
       features: ["Instant store onboarding", "Real-time stock control", "Automated daily payouts"],
     },
     {
-      id: "raider",
+      id: "rider",
       badge: "FOR DELIVERY PARTNERS",
-      title: "RAIDER APP",
+      title: "RIDER APP",
       tagline: "Earn While You Deliver",
       description:
         "Join our flexible delivery network with competitive per-order payouts, surge incentives, and seamless route navigation.",
-      cta: "Join as a Raider",
-      ctaLink: "#raider",
+      cta: "Join as a Rider",
+      ctaLink: "#rider",
       icon: Bike,
       accent: "#FA4C00",
       previewImage: "/assets/apps/raider/delivery.png",
@@ -64,7 +64,7 @@ export const Ecosystem: React.FC = () => {
           badgeIcon={<Sparkles className="w-3.5 h-3.5 text-[#FA4C00]" />}
           title="One Platform. Three Powerful Apps."
           highlightText="Three Powerful Apps."
-          subtitle="Built for Customers, Vendors and Raiders — a complete ecosystem for a smarter, faster shopping experience."
+          subtitle="Built for Customers, Vendors and Riders — a complete ecosystem for a smarter, faster shopping experience."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

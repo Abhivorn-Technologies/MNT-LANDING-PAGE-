@@ -3,12 +3,12 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { RAIDER_FEATURES } from "@/data/features";
+import { RIDER_FEATURES } from "@/data/features";
 import { Bike, DollarSign, Clock, MapPin, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 
-export const RaiderSection: React.FC = () => {
+export const RiderSection: React.FC = () => {
   return (
-    <section id="raider" className="py-24 sm:py-32 bg-[#050507] relative overflow-hidden">
+    <section id="rider" className="py-24 sm:py-32 bg-[#050507] relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-10 w-[500px] h-[500px] bg-mnt-orange/10 blur-[160px] pointer-events-none" />
 
@@ -17,14 +17,14 @@ export const RaiderSection: React.FC = () => {
           {/* Left Visual Preview (6 cols) */}
           <div className="lg:col-span-6 order-2 lg:order-1" data-reveal="fade-right">
             <div className="relative rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-mnt-card to-[#121217] border border-white/15 shadow-2xl shadow-black/80">
-              {/* Raider App Status Header */}
+              {/* Rider App Status Header */}
               <div className="flex items-center justify-between pb-5 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-mnt-orange/20 flex items-center justify-center text-mnt-orange font-bold">
                     <Bike className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white">Raider Partner Mode</h4>
+                    <h4 className="text-sm font-bold text-white">Rider Partner Mode</h4>
                     <p className="text-xs text-emerald-400 font-medium">● Online • High Surge Active (+₹30)</p>
                   </div>
                 </div>
@@ -49,11 +49,11 @@ export const RaiderSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Raider Screen Graphic */}
+              {/* Rider Screen Graphic */}
               <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-mnt-dark border border-white/5">
                 <Image
                   src="/assets/apps/raider/delivery.png"
-                  alt="Raider App Interface"
+                  alt="Rider App Interface"
                   fill
                   className="object-cover"
                 />
@@ -78,7 +78,7 @@ export const RaiderSection: React.FC = () => {
 
             {/* 4 Features List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-              {RAIDER_FEATURES.map((feat, idx) => (
+              {RIDER_FEATURES.map((feat, idx) => (
                 <div
                   key={idx}
                   className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-mnt-orange/40 transition-all"
@@ -101,7 +101,7 @@ export const RaiderSection: React.FC = () => {
                 href="#contact"
                 icon={<ArrowRight className="w-5 h-5" />}
               >
-                Join as a Raider
+                Join as a Rider
               </Button>
             </div>
           </div>
@@ -110,3 +110,6 @@ export const RaiderSection: React.FC = () => {
     </section>
   );
 };
+
+export const RaiderSection = RiderSection;
+

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { FOOTER_LINKS } from "@/data/navigation";
 import {
@@ -41,7 +42,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 pb-16 border-b border-white/[0.08]">
           {/* Brand Info (2 Columns) */}
           <div className="lg:col-span-2 space-y-6">
-            <a href="#home" className="flex items-center gap-3 group focus:outline-none" aria-label="Multi New Trends Home">
+            <Link href="/" className="flex items-center gap-3 group focus:outline-none" aria-label="Multi New Trends Home">
               <div className="relative h-11 w-auto flex items-center">
                 <Image
                   src="/assets/logo/footer.png"
@@ -51,14 +52,14 @@ export const Footer: React.FC = () => {
                   className="h-10 w-auto object-contain brightness-110 rounded-[10px]"
                 />
               </div>
-            </a>
+            </Link>
 
             <p className="text-sm font-semibold tracking-wider text-mnt-orange uppercase">
               EVERYTHING YOU NEED. ONE TREND AWAY.
             </p>
 
             <p className="text-sm text-mnt-muted leading-relaxed pr-6">
-              A comprehensive hyperlocal commerce ecosystem connecting customers, verified retail vendors, and independent raiders for a smarter, faster shopping experience.
+              A comprehensive hyperlocal commerce ecosystem connecting customers, verified retail vendors, and independent riders for a smarter, faster shopping experience.
             </p>
 
             {/* Social Links */}
@@ -86,12 +87,12 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-mnt-muted hover:text-white transition-colors duration-200 flex items-center gap-1 group"
                   >
                     <span>{link.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -105,12 +106,12 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               {FOOTER_LINKS.forBusiness.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-mnt-muted hover:text-white transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -124,12 +125,12 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               {FOOTER_LINKS.support.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-mnt-muted hover:text-white transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -141,8 +142,8 @@ export const Footer: React.FC = () => {
               Get the Apps
             </h4>
             <div className="space-y-2.5">
-              <a
-                href="#download"
+              <Link
+                href="/#download"
                 className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-mnt-orange/50 hover:bg-white/[0.08] transition-all group"
               >
                 <Smartphone className="w-5 h-5 text-mnt-orange group-hover:scale-110 transition-transform" />
@@ -150,10 +151,10 @@ export const Footer: React.FC = () => {
                   <span className="text-[10px] text-mnt-muted uppercase font-medium">Get it on</span>
                   <span className="text-xs font-bold text-white">Google Play</span>
                 </div>
-              </a>
+              </Link>
 
-              <a
-                href="#download"
+              <Link
+                href="/#download"
                 className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-mnt-orange/50 hover:bg-white/[0.08] transition-all group"
               >
                 <Smartphone className="w-5 h-5 text-mnt-orange-light group-hover:scale-110 transition-transform" />
@@ -161,7 +162,7 @@ export const Footer: React.FC = () => {
                   <span className="text-[10px] text-mnt-muted uppercase font-medium">Download on the</span>
                   <span className="text-xs font-bold text-white">App Store</span>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

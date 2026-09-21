@@ -34,7 +34,7 @@ export const FAQ: React.FC = () => {
 
             <p className="text-base sm:text-lg text-[#555555] leading-relaxed font-normal">
               Find quick answers to common questions about Multi New Trends, shopping, delivery,
-              vendors and raiders.
+              vendors and riders.
             </p>
 
             {/* Decorative MN Brand Card Visual */}

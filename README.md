@@ -32,13 +32,13 @@ All sections and interactive elements utilize an **IntersectionObserver** engine
 
 1. **Navbar**: Sticky header with glass backdrop blur, active section scroll spy, search popup modal, and mobile drawer.
 2. **Hero**: Cinematic lighting, orange gradient heading, 3D floating phone mockups, delivery speed badges, and 4 core value props.
-3. **Three-App Ecosystem**: Interactive showcase cards for the **User App**, **Vendor App**, and **Raider App**.
+3. **Three-App Ecosystem**: Interactive showcase cards for the **User App**, **Vendor App**, and **Rider App**.
 4. **Shop by Category**: 12 curated departments with hover scale, dynamic tags, and arrow indicators.
 5. **How It Works**: 3-step timeline (`01 DISCOVER`, `02 ORDER`, `03 DELIVERED`) with connecting lines.
 6. **Featured Deals**: High-impact promotional section with live countdown ticker, discount badges, and 1-click cart action.
 7. **User App Showcase**: Dark flagship showcase with dual floating phones illustrating real UI screens.
 8. **Vendor Section**: Store digitalization hub with revenue growth metrics and partner onboarding.
-9. **Raider Section**: Delivery network spotlight with earnings preview and surge bonus tracker.
+9. **Rider Section**: Delivery network spotlight with earnings preview and surge bonus tracker.
 10. **Why Choose Us**: 6 frosted glass feature cards with modern icons.
 11. **Loved by Thousands (Testimonials)**: Verified customer reviews with 5-star ratings.
 12. **Download App**: App Store and Google Play conversion section with interactive QR code scanner.

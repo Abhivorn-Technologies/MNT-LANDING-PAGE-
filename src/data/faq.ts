@@ -31,9 +31,9 @@ export const FAQ_DATA: FAQItem[] = [
   },
   {
     id: "faq-5",
-    question: "How can I become a Raider?",
+    question: "How can I become a Rider?",
     answer:
-      "Delivery partners can join the Multi New Trends Raider network and manage delivery opportunities through the Raider App.",
+      "Delivery partners can join the Multi New Trends Rider network and manage delivery opportunities through the Rider App.",
   },
   {
     id: "faq-6",

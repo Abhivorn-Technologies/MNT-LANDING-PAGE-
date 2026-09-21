@@ -34,7 +34,7 @@ export interface Testimonial {
 }
 
 export interface EcosystemApp {
-  id: "user" | "vendor" | "raider";
+  id: "user" | "vendor" | "rider";
   title: string;
   tagline: string;
   badge: string;
