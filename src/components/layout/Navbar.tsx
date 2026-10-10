@@ -5,15 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { NAV_ITEMS } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
-import { Search, Menu, X, Download, Sparkles } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
 
   // Handle scroll detection for subtle shadow elevation and active section
   useEffect(() => {
@@ -66,7 +64,7 @@ export const Navbar: React.FC = () => {
               <div className="relative h-10 sm:h-11 md:h-12 w-auto flex items-center">
                 <Image
                   src="/assets/logo.png"
-                  alt="Multi New Trends"
+                  alt="Multi New Trends company logo"
                   width={220}
                   height={48}
                   priority
@@ -101,16 +99,6 @@ export const Navbar: React.FC = () => {
 
             {/* Right Action Buttons */}
             <div className="hidden sm:flex items-center gap-3">
-              {/* Search Icon Button */}
-              <button
-                type="button"
-                onClick={() => setSearchModalOpen(true)}
-                className="w-10 h-10 rounded-full bg-[#F2E8D2] border border-[#E2D5BE] hover:border-[#FA4C00] hover:bg-[#FAF4E6] text-[#111111] hover:text-[#FA4C00] flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FA4C00]/40"
-                aria-label="Search items"
-              >
-                <Search className="w-4 h-4 text-[#111111] hover:text-[#FA4C00] transition-colors" />
-              </button>
-
               {/* Download App CTA */}
               <Button
                 variant="primary"
@@ -123,16 +111,8 @@ export const Navbar: React.FC = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu & Search Buttons */}
+            {/* Mobile Menu Button */}
             <div className="flex sm:hidden items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setSearchModalOpen(true)}
-                className="p-2.5 rounded-xl bg-[#F2E8D2] border border-[#E2D5BE] text-[#111111] hover:text-[#FA4C00]"
-                aria-label="Search"
-              >
-                <Search className="w-5 h-5" />
-              </button>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -185,59 +165,6 @@ export const Navbar: React.FC = () => {
           </div>
         )}
       </header>
-
-      {/* Interactive Search Modal */}
-      {searchModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-black/80 backdrop-blur-md animate-fade-in">
-          <div className="w-full max-w-xl rounded-2xl bg-mnt-card border border-white/15 p-6 shadow-2xl relative">
-            <button
-              onClick={() => setSearchModalOpen(false)}
-              className="absolute top-4 right-4 p-2 text-white/60 hover:text-white rounded-full hover:bg-white/10"
-              aria-label="Close search"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-3 pb-4 border-b border-white/10">
-              <Search className="w-6 h-6 text-mnt-orange" />
-              <input
-                type="text"
-                autoFocus
-                placeholder="Search groceries, gadgets, shoes, kitchenware..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-transparent text-white placeholder-white/40 text-lg focus:outline-none font-medium"
-              />
-            </div>
-
-            <div className="mt-4">
-              <p className="text-xs uppercase tracking-wider text-mnt-muted font-semibold mb-3">
-                Trending Categories
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Fresh Grocery",
-                  "Wireless Earbuds",
-                  "Sports Shoes",
-                  "Air Fryer",
-                  "Smart Watches",
-                  "Kitchen Sets",
-                ].map((tag) => (
-                  <a
-                    key={tag}
-                    href="#categories"
-                    onClick={() => setSearchModalOpen(false)}
-                    className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-mnt-orange/20 hover:border-mnt-orange/40 border border-white/5 text-sm text-white/90 hover:text-mnt-orange-light transition-all flex items-center gap-1.5"
-                  >
-                    <Sparkles className="w-3 h-3 text-mnt-orange" />
-                    {tag}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

@@ -3,9 +3,38 @@ import { Metadata } from "next";
 import { LegalPageLayout, TocItem } from "@/components/legal/LegalPageLayout";
 import { Mail, Phone, MapPin, ShieldCheck, CheckCircle2, Lock, Eye, Database, Smartphone, UserCheck } from "lucide-react";
 
+import { siteConfig } from "@/lib/siteConfig";
+
 export const metadata: Metadata = {
   title: "Privacy Policy | Multi New Trends",
-  description: "Learn how Multi New Trends collects, uses and protects information.",
+  description:
+    "Learn how Multi New Trends handles personal information, privacy, data usage and user choices.",
+  alternates: {
+    canonical: `${siteConfig.url}/privacy`,
+  },
+  openGraph: {
+    title: "Privacy Policy | Multi New Trends",
+    description:
+      "Learn how Multi New Trends handles personal information, privacy, data usage and user choices.",
+    url: `${siteConfig.url}/privacy`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: `${siteConfig.url}${siteConfig.ogImage}`,
+        width: 1200,
+        height: 630,
+        alt: "Multi New Trends - Privacy Policy",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Multi New Trends",
+    description:
+      "Learn how Multi New Trends handles personal information, privacy, data usage and user choices.",
+    images: [`${siteConfig.url}${siteConfig.ogImage}`],
+  },
 };
 
 const privacyTocItems: TocItem[] = [
@@ -522,7 +551,12 @@ export default function PrivacyPage() {
               <Phone className="w-4 h-4 text-[#FA4C00] shrink-0" />
               <div>
                 <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Phone</span>
-                <span className="font-semibold text-[#111111] block">+91 XXXXX XXXXX</span>
+                <a
+                  href="tel:+919992125566"
+                  className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block"
+                >
+                  +91 9992125566
+                </a>
               </div>
             </div>
 

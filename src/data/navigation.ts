@@ -22,7 +22,7 @@ export const FOOTER_LINKS = {
   ],
   forBusiness: [
     { label: "Become a Vendor", href: "/#vendor" },
-    { label: "Become a Rider", href: "/#rider" },
+    { label: "Become a Raider", href: "/#rider" },
     { label: "Partner With Us", href: "/#contact" },
   ],
   support: [
@@ -30,13 +30,14 @@ export const FOOTER_LINKS = {
     { label: "FAQs", href: "/#faq" },
     { label: "Terms & Conditions", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
+    { label: "Delete Account Policy", href: "/delete-account" },
     { label: "Contact Us", href: "/#contact" },
   ],
   socials: [
-    { name: "Instagram", href: "https://instagram.com", icon: "Instagram" },
-    { name: "Facebook", href: "https://facebook.com", icon: "Facebook" },
-    { name: "YouTube", href: "https://youtube.com", icon: "Youtube" },
-    { name: "X (Twitter)", href: "https://twitter.com", icon: "Twitter" },
-    { name: "LinkedIn", href: "https://linkedin.com", icon: "Linkedin" },
+    { name: "Instagram", href: "https://www.instagram.com/multinewtrends", icon: "Instagram" },
+    { name: "Facebook", href: "https://www.facebook.com/Multinewtrends/", icon: "Facebook" },
+    { name: "YouTube", href: "https://www.youtube.com/@multinewtrends", icon: "YouTube" },
+    { name: "X", href: "https://x.com/MultinewTrends", icon: "X" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/multinewtrends/", icon: "LinkedIn" },
   ],
 };

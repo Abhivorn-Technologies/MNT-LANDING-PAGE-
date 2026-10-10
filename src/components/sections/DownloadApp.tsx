@@ -76,7 +76,7 @@ export const DownloadApp: React.FC = () => {
                   <div className="w-20 h-20 bg-white p-1 rounded-xl shrink-0 shadow-md relative overflow-hidden flex items-center justify-center">
                     <Image
                       src="/assets/categories/QR.png"
-                      alt="Scan to Install"
+                      alt="QR code to install Multi New Trends mobile app"
                       width={80}
                       height={80}
                       className="w-full h-full object-contain"
@@ -100,11 +100,10 @@ export const DownloadApp: React.FC = () => {
                   <div className="relative rounded-[36px] overflow-hidden bg-mnt-black aspect-[941/1672] isolate [transform:translateZ(0)]">
                     <Image
                       src="/assets/categories/PH SS-3.png"
-                      alt="Multi New Trends App"
+                      alt="Multi New Trends shopping application interface preview"
                       fill
                       sizes="(max-width: 640px) 260px, 300px"
                       className="object-cover w-full h-full block"
-                      priority
                     />
                   </div>
                 </div>

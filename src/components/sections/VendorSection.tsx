@@ -56,8 +56,9 @@ export const VendorSection: React.FC = () => {
               <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-[#181820] border border-black/5 shadow-inner">
                 <Image
                   src="/assets/apps/vendor/dashboard.png"
-                  alt="Vendor Dashboard Interface"
+                  alt="Multi New Trends vendor portal dashboard interface"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 550px"
                   className="object-cover"
                 />
               </div>

@@ -97,11 +97,10 @@ export const UserAppShowcase: React.FC = () => {
                 <div className="rounded-[32px] overflow-hidden bg-black relative aspect-[9/16] w-full isolate [transform:translateZ(0)]">
                   <Image
                     src="/assets/categories/PH SS-2.png"
-                    alt="Multi New Trends User App"
+                    alt="Multi New Trends shopping application browse interface"
                     fill
                     sizes="(max-width: 640px) 220px, 260px"
                     className="object-cover w-full h-full block"
-                    priority
                   />
                 </div>
               </div>
@@ -117,11 +116,10 @@ export const UserAppShowcase: React.FC = () => {
                 <div className="rounded-[36px] overflow-hidden bg-black relative aspect-[9/16] w-full isolate [transform:translateZ(0)]">
                   <Image
                     src="/assets/categories/PH SS-1.png"
-                    alt="Multi New Trends Live Tracking"
+                    alt="Multi New Trends live order GPS tracking screen"
                     fill
                     sizes="(max-width: 640px) 250px, 290px"
                     className="object-cover w-full h-full block"
-                    priority
                   />
                 </div>
               </div>

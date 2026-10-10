@@ -3,15 +3,13 @@ export interface ContactInfo {
   phoneDisplay: string;
   email: string;
   location: string;
-  hours: string;
 }
 
 export const CONTACT_DETAILS: ContactInfo = {
-  phone: "+91 XXXXX XXXXX",
-  phoneDisplay: "+91 XXXXX XXXXX",
+  phone: "+91 9992125566",
+  phoneDisplay: "+91 9992125566",
   email: "support@multinewtrends.com",
   location: "India",
-  hours: "Monday – Sunday: 8:00 AM – 10:00 PM IST",
 };
 
 export const CONTACT_SUBJECTS = [

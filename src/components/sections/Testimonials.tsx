@@ -51,8 +51,9 @@ export const Testimonials: React.FC = () => {
                   <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#FA4C00]/40 shadow-sm shrink-0">
                     <Image
                       src={t.avatar}
-                      alt={t.name}
+                      alt={`${t.name} - ${t.role}`}
                       fill
+                      sizes="48px"
                       className="object-cover"
                     />
                   </div>

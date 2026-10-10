@@ -3,9 +3,38 @@ import { Metadata } from "next";
 import { LegalPageLayout, TocItem } from "@/components/legal/LegalPageLayout";
 import { Mail, Phone, MapPin, ShieldAlert, CheckCircle2, AlertTriangle, Scale } from "lucide-react";
 
+import { siteConfig } from "@/lib/siteConfig";
+
 export const metadata: Metadata = {
   title: "Terms & Conditions | Multi New Trends",
-  description: "Terms and conditions governing the use of Multi New Trends services.",
+  description:
+    "Read the terms and conditions governing access to and use of Multi New Trends services.",
+  alternates: {
+    canonical: `${siteConfig.url}/terms`,
+  },
+  openGraph: {
+    title: "Terms & Conditions | Multi New Trends",
+    description:
+      "Read the terms and conditions governing access to and use of Multi New Trends services.",
+    url: `${siteConfig.url}/terms`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: `${siteConfig.url}${siteConfig.ogImage}`,
+        width: 1200,
+        height: 630,
+        alt: "Multi New Trends - Terms & Conditions",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions | Multi New Trends",
+    description:
+      "Read the terms and conditions governing access to and use of Multi New Trends services.",
+    images: [`${siteConfig.url}${siteConfig.ogImage}`],
+  },
 };
 
 const termsTocItems: TocItem[] = [
@@ -588,30 +617,38 @@ export default function TermsPage() {
             Multi New Trends
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9]">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm [grid-template-columns:repeat(1,minmax(0,1fr))] sm:[grid-template-columns:repeat(3,minmax(0,1fr))]">
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 box-border">
               <Mail className="w-4 h-4 text-[#FA4C00] shrink-0" />
-              <div>
+              <div className="min-w-0 flex-1">
                 <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Email</span>
-                <a href="mailto:support@multinewtrends.com" className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors">
+                <a
+                  href="mailto:support@multinewtrends.com"
+                  className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block max-w-full break-words [overflow-wrap:anywhere]"
+                >
                   support@multinewtrends.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9]">
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 box-border">
               <Phone className="w-4 h-4 text-[#FA4C00] shrink-0" />
-              <div>
+              <div className="min-w-0 flex-1">
                 <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Phone</span>
-                <span className="font-semibold text-[#111111] block">+91 XXXXX XXXXX</span>
+                <a
+                  href="tel:+919992125566"
+                  className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block max-w-full truncate"
+                >
+                  +91 9992125566
+                </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9]">
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 box-border">
               <MapPin className="w-4 h-4 text-[#FA4C00] shrink-0" />
-              <div>
+              <div className="min-w-0 flex-1">
                 <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Location</span>
-                <span className="font-semibold text-[#111111] block">India</span>
+                <span className="font-semibold text-[#111111] block max-w-full truncate">India</span>
               </div>
             </div>
           </div>

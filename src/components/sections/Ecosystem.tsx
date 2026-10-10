@@ -117,7 +117,7 @@ export const Ecosystem: React.FC = () => {
                   <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-black/[0.08] mb-6 group-hover:border-[#FA4C00]/30 transition-all">
                     <Image
                       src={app.previewImage}
-                      alt={app.title}
+                      alt={`Multi New Trends ${app.title} interface preview`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 420px"
                       className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"

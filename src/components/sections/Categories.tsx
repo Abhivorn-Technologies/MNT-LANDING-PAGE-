@@ -39,7 +39,7 @@ export const Categories: React.FC = () => {
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[#F7F7F7] border border-black/[0.04] mb-3.5 flex items-center justify-center group-hover:border-[#FA4C00]/30 transition-all">
                   <Image
                     src={cat.image}
-                    alt={cat.name}
+                    alt={`${cat.name} products`}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

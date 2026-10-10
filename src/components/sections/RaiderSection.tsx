@@ -53,8 +53,9 @@ export const RiderSection: React.FC = () => {
               <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-mnt-dark border border-white/5">
                 <Image
                   src="/assets/apps/raider/delivery.png"
-                  alt="Rider App Interface"
+                  alt="Multi New Trends delivery partner app interface"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 550px"
                   className="object-cover"
                 />
               </div>

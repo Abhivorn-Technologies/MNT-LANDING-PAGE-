@@ -90,8 +90,9 @@ export const FeaturedDeals: React.FC = () => {
                   <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#F7F7F7] border border-black/[0.04] mb-5 flex items-center justify-center group-hover:border-[#FA4C00]/30 transition-all">
                     <Image
                       src={deal.image}
-                      alt={deal.name}
+                      alt={`${deal.name} (${deal.category})`}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-contain p-4 group-hover:scale-108 transition-transform duration-500"
                     />
                   </div>

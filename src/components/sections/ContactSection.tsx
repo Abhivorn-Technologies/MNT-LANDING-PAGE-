@@ -147,9 +147,6 @@ export const ContactSection: React.FC = () => {
                   >
                     {CONTACT_DETAILS.phoneDisplay}
                   </a>
-                  <span className="text-xs text-[#666666] block mt-1 font-medium">
-                    {CONTACT_DETAILS.hours}
-                  </span>
                 </div>
               </div>
 

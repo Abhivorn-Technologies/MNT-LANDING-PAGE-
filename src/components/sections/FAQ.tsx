@@ -13,8 +13,25 @@ export const FAQ: React.FC = () => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_DATA.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="py-24 sm:py-32 bg-[#FFFFFF] text-[#111111] relative overflow-hidden border-b border-black/[0.06]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Subtle decorative background watermark */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#FA4C00]/4 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#FFBD59]/6 rounded-full blur-3xl pointer-events-none" />

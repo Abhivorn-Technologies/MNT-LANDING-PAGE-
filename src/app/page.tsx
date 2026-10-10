@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -14,18 +13,52 @@ import { RiderSection } from "@/components/sections/RaiderSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { DownloadApp } from "@/components/sections/DownloadApp";
-import { Newsletter } from "@/components/sections/Newsletter";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { FAQ } from "@/components/sections/FAQ";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { useGlobalScrollReveal } from "@/hooks/useScrollAnimation";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { ScrollObserver } from "@/components/ui/ScrollObserver";
+import { siteConfig } from "@/lib/siteConfig";
+
+export const metadata: Metadata = {
+  title: "Multi New Trends | Shop Groceries, Electronics, Fashion & More",
+  description:
+    "Discover groceries, electronics, fashion, home essentials and more with Multi New Trends. Explore products, local stores, deals and convenient shopping.",
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  openGraph: {
+    title: "Multi New Trends | Shop Groceries, Electronics, Fashion & More",
+    description:
+      "Discover groceries, electronics, fashion, home essentials and more with Multi New Trends. Explore products, local stores, deals and convenient shopping.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.url}${siteConfig.ogImage}`,
+        width: 1200,
+        height: 630,
+        alt: "Multi New Trends - Hyperlocal Multi-Category Shopping Platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Multi New Trends | Shop Groceries, Electronics, Fashion & More",
+    description:
+      "Discover groceries, electronics, fashion, home essentials and more with Multi New Trends. Explore products, local stores, deals and convenient shopping.",
+    images: [`${siteConfig.url}${siteConfig.ogImage}`],
+  },
+};
 
 export default function Home() {
-  // Activate global scroll observer for replayable animations on scroll entry & exit
-  useGlobalScrollReveal();
-
   return (
     <div className="flex flex-col min-h-screen bg-mnt-black text-white relative">
+      {/* Client Scroll Animation Observer */}
+      <ScrollObserver />
+
       {/* 01: Sticky Navigation Bar */}
       <Navbar />
 
@@ -63,10 +96,7 @@ export default function Home() {
         {/* 12: Download App */}
         <DownloadApp />
 
-        {/* 13: Newsletter */}
-        <Newsletter />
-
-        {/* 14: Strong Final CTA */}
+        {/* 13: Strong Final CTA */}
         <FinalCTA />
 
         {/* 15: FAQ Section (Light #FAF4E6 theme) */}
@@ -75,6 +105,9 @@ export default function Home() {
         {/* 16: Contact Us Section (Dark #050505 theme) */}
         <ContactSection />
       </main>
+
+      {/* Floating Scroll-to-Top Arrow */}
+      <ScrollToTop />
 
       {/* 17: Footer */}
       <Footer />

@@ -34,7 +34,8 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <Image
           src="/assets/hero/hero.png"
-          alt="Hero Background"
+          alt=""
+          aria-hidden="true"
           fill
           priority
           sizes="100vw"
@@ -152,7 +153,7 @@ export const Hero: React.FC = () => {
                 <div className="rounded-[40px] overflow-hidden bg-mnt-black">
                   <Image
                     src="/assets/hero/ss.png"
-                    alt="Multi New Trends App Interface"
+                    alt="Multi New Trends shopping app screenshot"
                     width={380}
                     height={823}
                     priority

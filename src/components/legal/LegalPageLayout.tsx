@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ChevronDown, FileText, Calendar, Clock, Sparkles } from "lucide-react";
+import { ChevronDown, FileText, Calendar, Clock, Sparkles, ArrowLeft } from "lucide-react";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/siteConfig";
 
 export interface TocItem {
   id: string;
@@ -33,6 +36,7 @@ export const LegalPageLayout: React.FC<LegalPageLayoutProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
+
       const scrollPosition = window.scrollY + 180;
       for (const item of tocItems) {
         const element = document.getElementById(item.id);
@@ -63,18 +67,52 @@ export const LegalPageLayout: React.FC<LegalPageLayoutProps> = ({
     }
   };
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: title,
+      },
+    ],
+  };
+
   return (
-    <div className="flex flex-col min-h-screen bg-white text-[#111111]">
+    <div className="flex flex-col min-h-screen bg-white text-[#111111] relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <Navbar />
 
       <main className="flex-1 pt-20 sm:pt-24">
         {/* Legal Page Header */}
-        <section className="bg-[#FAF4E6] border-b border-[#E8DFC9] py-12 sm:py-16 relative overflow-hidden">
+        <section className="bg-[#FAF4E6] border-b border-[#E8DFC9] py-10 sm:py-14 relative overflow-hidden">
           {/* Subtle Decorative Ambient Glow */}
           <div className="absolute top-1/2 right-10 -translate-y-1/2 w-80 h-80 bg-[#FA4C00]/8 blur-[120px] pointer-events-none" />
           <div className="absolute -top-10 left-10 w-64 h-64 bg-[#FFBD59]/10 blur-[100px] pointer-events-none" />
 
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Back to Home Button */}
+            <div className="mb-5">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E5DAC0] text-[#FA4C00] hover:bg-[#FAF4E6] hover:border-[#FA4C00]/50 hover:shadow-[0_4px_14px_rgba(250,76,0,0.18)] text-xs sm:text-sm font-semibold transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-[#FA4C00]/40"
+                aria-label="Back to Home"
+              >
+                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
+
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5DAC0] text-[#FA4C00] font-bold text-xs uppercase tracking-wider mb-4 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
@@ -203,6 +241,9 @@ export const LegalPageLayout: React.FC<LegalPageLayoutProps> = ({
           </div>
         </div>
       </main>
+
+      {/* Floating Scroll-to-Top Arrow */}
+      <ScrollToTop />
 
       <Footer />
     </div>
