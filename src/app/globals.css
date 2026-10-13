@@ -225,6 +225,45 @@
   filter: drop-shadow(0 0 12px rgba(45, 192, 235, 0.95)) drop-shadow(0 0 24px rgba(45, 192, 235, 0.6));
 }
 
+/* Developer Credit Animated Soft Golden-Yellow Glow (#FFD700) */
+@keyframes devYellowGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.35)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.18));
+  }
+  50% {
+    filter: drop-shadow(0 0 9px rgba(255, 215, 0, 0.55)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.28));
+  }
+}
+
+.developer-credit-digilevelup {
+  color: #FFD700;
+  background: linear-gradient(
+    110deg,
+    #FFD700 0%,
+    #FFD700 38%,
+    #FFF4A3 50%,
+    #FFFFFF 52%,
+    #FFF4A3 54%,
+    #FFD700 64%,
+    #FFD700 100%
+  );
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: devShineFlow 3.8s linear infinite, devYellowGlowPulse 4s ease-in-out infinite;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: filter 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.developer-credit-digilevelup:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.75)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.45));
+}
+
+
 /* Social Media Interactive Hover Effect Classes */
 .social-icon-btn {
   position: relative;
@@ -284,6 +323,12 @@
     background: none !important;
     -webkit-text-fill-color: #2DC0EB !important;
     filter: drop-shadow(0 0 6px rgba(45, 192, 235, 0.5)) !important;
+  }
+  .developer-credit-digilevelup {
+    animation: none !important;
+    background: none !important;
+    -webkit-text-fill-color: #FFD700 !important;
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.35)) !important;
   }
   .social-icon-btn:hover {
     transform: none !important;

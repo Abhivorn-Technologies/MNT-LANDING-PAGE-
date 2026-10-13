@@ -222,8 +222,8 @@ export const Footer: React.FC = () => {
             </span>
           </div>
 
-          {/* Developer Credit with Continuous #2DC0EB Cyan Glow & Light Shine */}
-          <div className="flex items-center justify-center gap-1.5 text-center md:text-right shrink-0">
+          {/* Developer Credit Area */}
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-1.5 gap-y-1 text-center md:text-right">
             <span className="text-mnt-muted">Developed By</span>
             <a
               href="https://www.abhivorn.com/"
@@ -234,6 +234,18 @@ export const Footer: React.FC = () => {
             >
               Abhivorn Technologies Pvt Ltd.
             </a>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="text-mnt-muted">&amp;</span>
+              <a
+                href="https://www.digilevelup.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="developer-credit-digilevelup font-semibold"
+                aria-label="DigiLevelup"
+              >
+                DigiLevelup
+              </a>
+            </span>
           </div>
         </div>
       </Container>

@@ -175,7 +175,7 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Floating Live Badge 2: 50k+ Happy Customers */}
+              {/* Floating Live Badge 2: Trusted Vendors */}
               <div className="absolute -bottom-6 -right-4 sm:-right-8 p-3.5 rounded-2xl glass-panel border border-white/15 shadow-xl flex items-center gap-3 animate-float z-20">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
                   <ShieldCheck className="w-5 h-5" />
@@ -186,7 +186,7 @@ export const Hero: React.FC = () => {
                       <Star key={s} className="w-3 h-3 text-mnt-orange-light fill-mnt-orange-light" />
                     ))}
                   </div>
-                  <p className="text-xs font-bold text-white mt-0.5">50,000+ Verified Orders</p>
+                  <p className="text-xs font-bold text-white mt-0.5">Trusted Vendors</p>
                 </div>
               </div>
             </div>
