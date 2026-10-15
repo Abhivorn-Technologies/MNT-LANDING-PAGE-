@@ -9,7 +9,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FeaturedDeals } from "@/components/sections/FeaturedDeals";
 import { UserAppShowcase } from "@/components/sections/UserAppShowcase";
 import { VendorSection } from "@/components/sections/VendorSection";
-import { RiderSection } from "@/components/sections/RaiderSection";
+import { RiderSection } from "@/components/sections/RiderSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { DownloadApp } from "@/components/sections/DownloadApp";

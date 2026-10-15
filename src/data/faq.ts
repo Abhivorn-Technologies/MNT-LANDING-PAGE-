@@ -15,7 +15,7 @@ export const FAQ_DATA: FAQItem[] = [
     id: "faq-2",
     question: "What can I shop on Multi New Trends?",
     answer:
-      "You can shop across categories including Grocery, Electronics, Home Living, Kitchen, Kids, Sports, Stationery & Books, Pet, Gifts, Mobile Accessories, Beauty and Fashion.",
+      "You can shop across categories including Grocery, Electronics, Home Living, Kitchen, Kids, Sports, Stationery & Books, Pharmacy, Gifts, Mobile Accessories, Beauty and Fashion.",
   },
   {
     id: "faq-3",

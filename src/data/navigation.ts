@@ -22,7 +22,7 @@ export const FOOTER_LINKS = {
   ],
   forBusiness: [
     { label: "Become a Vendor", href: "/#vendor" },
-    { label: "Become a Raider", href: "/#rider" },
+    { label: "Become a Rider", href: "/#rider" },
     { label: "Partner With Us", href: "/#contact" },
   ],
   support: [

@@ -115,7 +115,7 @@ export default function TermsPage() {
             "Kids",
             "Sports",
             "Stationery & Books",
-            "Pet Products",
+            "Pharmacy",
             "Gifts",
             "Mobile Accessories",
             "Beauty",

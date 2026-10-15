@@ -66,11 +66,11 @@ export const CATEGORIES: Category[] = [
   },
   {
     id: "cat-8",
-    name: "Pet",
-    slug: "pet",
-    image: "/assets/Category/Pet.png",
-    itemCount: "680+ items",
-    accentColor: "#14B8A6",
+    name: "Pharmacy",
+    slug: "pharmacy",
+    image: "/assets/Category/Pharmacy.png",
+    itemCount: "1,600+ items",
+    accentColor: "#10B981",
     icon: "Heart",
   },
   {

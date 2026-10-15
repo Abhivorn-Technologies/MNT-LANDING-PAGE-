@@ -50,7 +50,7 @@
   <text x="65" y="505" fill="#FFFFFF" font-family="Outfit, sans-serif" font-weight="800" font-size="16">On the way • 8 mins away</text>
   <rect x="65" y="525" width="290" height="8" rx="4" fill="#282836"/>
   <rect x="65" y="525" width="220" height="8" rx="4" fill="url(#accentOrange)"/>
-  <text x="65" y="555" fill="#9CA3AF" font-family="Inter, sans-serif" font-size="11">Raider Rahul K. is nearby with your delivery</text>
+  <text x="65" y="555" fill="#9CA3AF" font-family="Inter, sans-serif" font-size="11">Rider Rahul K. is nearby with your delivery</text>
   <!-- Bottom Bar -->
   <rect x="45" y="695" width="330" height="55" rx="20" fill="#13131A" stroke="rgba(255,255,255,0.06)"/>
   <circle cx="95" cy="722" r="14" fill="#FA4C00"/>

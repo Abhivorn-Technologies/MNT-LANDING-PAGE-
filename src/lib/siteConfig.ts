@@ -31,7 +31,7 @@ export const siteConfig = {
     'Kids',
     'Sports',
     'Stationery & Books',
-    'Pet Products',
+    'Pharmacy',
     'Gifts',
     'Mobile Accessories',
     'Beauty',

@@ -47,7 +47,7 @@ export const Ecosystem: React.FC = () => {
       ctaLink: "#rider",
       icon: Bike,
       accent: "#FA4C00",
-      previewImage: "/assets/apps/raider/delivery.png",
+      previewImage: "/assets/apps/rider/delivery.png",
       features: ["Flexible working hours", "Instant weekly transfers", "Performance rewards & bonuses"],
     },
   ];
