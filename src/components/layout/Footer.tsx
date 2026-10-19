@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { FOOTER_LINKS } from "@/data/navigation";
+import { CookiePreferencesModal } from "@/components/legal/CookiePreferencesModal";
+import { OPEN_COOKIE_MODAL_EVENT } from "@/lib/cookieConsent";
 import {
   Instagram,
   Facebook,
@@ -15,6 +19,14 @@ import {
 } from "lucide-react";
 
 export const Footer: React.FC = () => {
+  const [isCookieModalOpen, setIsCookieModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpen = () => setIsCookieModalOpen(true);
+    window.addEventListener(OPEN_COOKIE_MODAL_EVENT, handleOpen);
+    return () => window.removeEventListener(OPEN_COOKIE_MODAL_EVENT, handleOpen);
+  }, []);
+
   const getSocialIcon = (iconName: string) => {
     switch (iconName) {
       case "Instagram":
@@ -74,10 +86,10 @@ export const Footer: React.FC = () => {
       </div>
 
       <Container className="relative z-10">
-        {/* 4-Column Desktop Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-white/[0.08]">
-          {/* Column 1 — Brand (Spans 5 cols on desktop for optimal layout) */}
-          <div className="lg:col-span-5 space-y-6">
+        {/* 5-Column Desktop Layout (4 + 2 + 2 + 2 + 2 = 12 columns) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-white/[0.08]">
+          {/* Column 1 — Brand (Spans 4 cols on desktop for optimal layout) */}
+          <div className="sm:col-span-2 lg:col-span-4 space-y-6">
             <Link
               href="/"
               className="inline-flex items-center gap-3 group focus:outline-none"
@@ -188,7 +200,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 4 — Support */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="lg:col-span-2 space-y-4">
             <h4 className="text-xs font-bold tracking-[0.18em] uppercase text-white font-heading">
               Support
             </h4>
@@ -201,6 +213,36 @@ export const Footer: React.FC = () => {
                   >
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5 — Legal & Privacy */}
+          <div className="lg:col-span-2 space-y-4">
+            <h4 className="text-xs font-bold tracking-[0.18em] uppercase text-white font-heading">
+              Legal &amp; Privacy
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              {FOOTER_LINKS.legal.map((link) => (
+                <li key={link.label}>
+                  {link.label === "Cookie Preferences" ? (
+                    <button
+                      type="button"
+                      onClick={() => setIsCookieModalOpen(true)}
+                      className="text-mnt-muted hover:text-white transition-colors duration-200 inline-block py-0.5 text-left focus:outline-none focus:text-white focus:underline"
+                      aria-label="Open cookie preferences modal"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-mnt-muted hover:text-white transition-colors duration-200 inline-block py-0.5"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -249,6 +291,12 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </Container>
+
+      {/* Global Accessible Cookie Preferences Modal */}
+      <CookiePreferencesModal
+        isOpen={isCookieModalOpen}
+        onClose={() => setIsCookieModalOpen(false)}
+      />
     </footer>
   );
 };

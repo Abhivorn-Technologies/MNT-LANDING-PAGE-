@@ -363,38 +363,39 @@ export default function DeleteAccountPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9]">
-              <Mail className="w-4 h-4 text-[#FA4C00] shrink-0" />
-              <div>
-                <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Email</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-sm">
+            <div className="flex items-start sm:items-center gap-2.5 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 overflow-hidden shadow-sm">
+              <Mail className="w-4 h-4 text-[#FA4C00] shrink-0 mt-0.5 sm:mt-0" />
+              <div className="min-w-0 flex-1">
+                <span className="text-[10px] sm:text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Email</span>
                 <a
                   href="mailto:support@multinewtrends.com"
-                  className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors break-all"
+                  className="text-xs sm:text-[12px] xl:text-[13px] font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block break-all [overflow-wrap:anywhere]"
+                  title="support@multinewtrends.com"
                 >
                   support@multinewtrends.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9]">
-              <Phone className="w-4 h-4 text-[#FA4C00] shrink-0" />
-              <div>
-                <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Phone</span>
+            <div className="flex items-start sm:items-center gap-2.5 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 overflow-hidden shadow-sm">
+              <Phone className="w-4 h-4 text-[#FA4C00] shrink-0 mt-0.5 sm:mt-0" />
+              <div className="min-w-0 flex-1">
+                <span className="text-[10px] sm:text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Phone</span>
                 <a
                   href="tel:+919992125566"
-                  className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block"
+                  className="text-xs sm:text-[12px] xl:text-[13px] font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block truncate"
                 >
                   +91 9992125566
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9]">
-              <MapPin className="w-4 h-4 text-[#FA4C00] shrink-0" />
-              <div>
-                <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Location</span>
-                <span className="font-semibold text-[#111111] block">India</span>
+            <div className="flex items-start sm:items-center gap-2.5 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 overflow-hidden shadow-sm">
+              <MapPin className="w-4 h-4 text-[#FA4C00] shrink-0 mt-0.5 sm:mt-0" />
+              <div className="min-w-0 flex-1">
+                <span className="text-[10px] sm:text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Location</span>
+                <span className="text-xs sm:text-[12px] xl:text-[13px] font-semibold text-[#111111] block truncate">India</span>
               </div>
             </div>
           </div>

@@ -45,6 +45,8 @@ export const ContactSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const [whatsappUrl, setWhatsappUrl] = useState<string>("");
+
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -90,7 +92,29 @@ export const ContactSection: React.FC = () => {
 
     setIsSubmitting(true);
 
-    // Simulate clean frontend submission state
+    const messageLines = [
+      "*New Inquiry — Multi New Trends Website*",
+      "",
+      `👤 *Full Name:* ${formData.fullName.trim()}`,
+      `📧 *Email:* ${formData.email.trim()}`,
+      ...(formData.phone.trim() ? [`📱 *Phone:* ${formData.phone.trim()}`] : []),
+      `🏷️ *Subject:* ${formData.subject}`,
+      "",
+      "💬 *Message:*",
+      formData.message.trim(),
+    ];
+
+    const encodedText = encodeURIComponent(messageLines.join("\n"));
+    const phoneDigits = CONTACT_DETAILS.phone.replace(/[^0-9]/g, "");
+    const generatedUrl = `https://api.whatsapp.com/send?phone=${phoneDigits}&text=${encodedText}`;
+
+    setWhatsappUrl(generatedUrl);
+
+    // Open WhatsApp in a new tab/window
+    if (typeof window !== "undefined") {
+      window.open(generatedUrl, "_blank", "noopener,noreferrer");
+    }
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -101,7 +125,7 @@ export const ContactSection: React.FC = () => {
         subject: "General Inquiry",
         message: "",
       });
-    }, 800);
+    }, 400);
   };
 
   return (
@@ -219,23 +243,35 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {isSuccess ? (
-                <div className="py-12 text-center space-y-4 animate-fade-in">
+                <div className="py-10 text-center space-y-4 animate-fade-in">
                   <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="text-2xl font-black font-heading text-[#111111]">
-                    Thank you! Your message has been received.
+                    Thank you! Ready to send on WhatsApp.
                   </h4>
                   <p className="text-sm text-[#555555] max-w-md mx-auto leading-relaxed">
-                    We appreciate you reaching out to Multi New Trends. Our representative will review
-                    your message and reply shortly.
+                    We have formatted your message and opened WhatsApp to connect directly with our official support team ({CONTACT_DETAILS.phoneDisplay}).
                   </p>
-                  <div className="pt-4">
+                  {whatsappUrl && (
+                    <div className="pt-2">
+                      <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-[0_4px_16px_rgba(37,211,102,0.35)] transition-all hover:scale-[1.02]"
+                      >
+                        <Send className="w-4 h-4" />
+                        Open WhatsApp Again
+                      </a>
+                    </div>
+                  )}
+                  <div className="pt-2">
                     <Button
                       variant="outline"
-                      size="md"
+                      size="sm"
                       onClick={() => setIsSuccess(false)}
-                      className="border-[#FA4C00] text-[#FA4C00]"
+                      className="border-[#E2D5BE] text-[#555555] hover:text-[#111111]"
                     >
                       Send Another Message
                     </Button>
@@ -395,8 +431,11 @@ export const ContactSection: React.FC = () => {
                       icon={<Send className="w-4 h-4" />}
                       className="shadow-[0_4px_20px_rgba(250,76,0,0.35)] hover:shadow-[0_8px_25px_rgba(250,76,0,0.5)] font-bold"
                     >
-                      {isSubmitting ? "Sending Message..." : "Send Message"}
+                      {isSubmitting ? "Opening WhatsApp..." : "Send Message via WhatsApp"}
                     </Button>
+                    <p className="text-[11px] text-[#777777] text-center mt-2.5">
+                      Your inquiry will be formatted and opened in WhatsApp directly with our official team ({CONTACT_DETAILS.phoneDisplay}).
+                    </p>
                   </div>
                 </form>
               )}

@@ -28,10 +28,14 @@ export const FOOTER_LINKS = {
   support: [
     { label: "Help Center", href: "/#contact" },
     { label: "FAQs", href: "/#faq" },
-    { label: "Terms & Conditions", href: "/terms" },
-    { label: "Privacy Policy", href: "/privacy" },
     { label: "Delete Account Policy", href: "/delete-account" },
     { label: "Contact Us", href: "/#contact" },
+  ],
+  legal: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms and Conditions", href: "/terms" },
+    { label: "Security", href: "/security" },
+    { label: "Cookie Preferences", href: "#cookie-preferences" },
   ],
   socials: [
     { name: "Instagram", href: "https://www.instagram.com/multinewtrends", icon: "Instagram" },

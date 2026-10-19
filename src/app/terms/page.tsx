@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 import { LegalPageLayout, TocItem } from "@/components/legal/LegalPageLayout";
 import { Mail, Phone, MapPin, ShieldAlert, CheckCircle2, AlertTriangle, Scale } from "lucide-react";
 
@@ -147,15 +148,15 @@ export default function TermsPage() {
           </h2>
         </div>
         <p>
-          You must provide accurate information when creating an account or placing an order.
+          You must be at least 18 years of age and competent to enter into a legally binding contract under the Indian Contract Act, 1872 to create an account or complete purchases on Multi New Trends. Minors under 18 years may only use the platform under the direct supervision and verifiable consent of a parent or legal guardian.
         </p>
         <p>By using Multi New Trends, you confirm that:</p>
         <ul className="space-y-2.5 pl-2">
           {[
-            "The information you provide is accurate and current.",
-            "You will maintain the security of your account credentials.",
-            "You will not use another person's account without authorization.",
-            "You will use the platform only for lawful purposes.",
+            "The information you provide is accurate, truthful, and current.",
+            "You will maintain the security and confidentiality of your account credentials.",
+            "You will not use another person's account or impersonate another individual.",
+            "You will use the platform only for lawful, authorized purposes.",
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#FA4C00] shrink-0 mt-1" />
@@ -176,15 +177,15 @@ export default function TermsPage() {
           </h2>
         </div>
         <p>
-          Certain features may require you to create an account.
+          Certain features, order placements, and partner interfaces require you to register an account.
         </p>
         <p>You are responsible for:</p>
         <ul className="space-y-2 pl-2">
           {[
-            "Maintaining the confidentiality of your login information.",
-            "Keeping your account information accurate.",
-            "All activities performed through your account.",
-            "Informing us if you suspect unauthorized access.",
+            "Maintaining the confidentiality of your login credentials and OTPs.",
+            "Keeping your profile and contact information accurate and up to date.",
+            "All activities and orders performed through your account.",
+            "Informing us promptly at support@multinewtrends.com if you suspect unauthorized access.",
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FA4C00] shrink-0 mt-2.5" />
@@ -192,10 +193,19 @@ export default function TermsPage() {
             </li>
           ))}
         </ul>
+
+        {/* Duties under DPDP Act */}
+        <div className="p-4 rounded-xl bg-[#FAF4E6] border border-[#E8DFC9] text-xs text-[#555555] space-y-1.5">
+          <p className="font-heading font-bold text-[#111111]">Duties of the Data Principal (DPDP Act, 2023, Section 15):</p>
+          <p>
+            When submitting personal data, you agree not to impersonate another individual, not to suppress any material information, and not to register false or frivolous grievances. You may request account deletion at any time in accordance with our <Link href="/delete-account" className="text-[#FA4C00] font-semibold underline">Delete Account Policy</Link>.
+          </p>
+        </div>
+
         <div className="p-4 rounded-xl bg-[#FAF4E6] border border-[#E8DFC9] text-xs text-[#555555] flex items-start gap-3">
           <AlertTriangle className="w-4 h-4 text-[#FA4C00] shrink-0 mt-0.5" />
           <p>
-            Multi New Trends may suspend or restrict accounts involved in fraudulent, abusive, unlawful, or prohibited activities.
+            Multi New Trends reserves the right to suspend or restrict accounts involved in fraudulent, abusive, unlawful, or prohibited activities.
           </p>
         </div>
       </section>
@@ -306,13 +316,13 @@ export default function TermsPage() {
           </h2>
         </div>
         <p>
-          Payments may be processed through supported third-party payment providers.
+          Payments for orders placed on Multi New Trends may be processed through supported, RBI-authorized third-party payment aggregators (supporting UPI, cards, Net Banking, and digital wallets).
         </p>
         <p>
-          You agree to provide valid and authorized payment information.
+          You agree to provide valid and authorized payment details. Multi New Trends does not store sensitive card numbers or CVV codes on its servers, and all payment data is processed in accordance with PCI-DSS standards. For more information, refer to our <Link href="/security" className="text-[#FA4C00] font-semibold underline">Security Policy</Link>.
         </p>
         <p>
-          Payment processing may be subject to the terms and privacy policies of the applicable payment provider.
+          Payment processing is governed by the terms, service conditions, and privacy policies of the applicable payment gateway provider.
         </p>
       </section>
 
@@ -516,8 +526,8 @@ export default function TermsPage() {
             </div>
           ))}
         </div>
-        <p className="pt-2">
-          Third-party services may have their own terms and privacy policies.
+        <p className="pt-2 text-xs text-[#666666]">
+          Third-party services are engaged under data protection terms compliant with the DPDP Act. For detailed information regarding how data is processed by third parties, review our <Link href="/privacy" className="text-[#FA4C00] font-semibold underline">Privacy Policy</Link>.
         </p>
       </section>
 
@@ -617,44 +627,45 @@ export default function TermsPage() {
             Multi New Trends
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm [grid-template-columns:repeat(1,minmax(0,1fr))] sm:[grid-template-columns:repeat(3,minmax(0,1fr))]">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 box-border">
-              <Mail className="w-4 h-4 text-[#FA4C00] shrink-0" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-sm">
+            <div className="flex items-start sm:items-center gap-2.5 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 overflow-hidden shadow-sm">
+              <Mail className="w-4 h-4 text-[#FA4C00] shrink-0 mt-0.5 sm:mt-0" />
               <div className="min-w-0 flex-1">
-                <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Email</span>
+                <span className="text-[10px] sm:text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Email</span>
                 <a
                   href="mailto:support@multinewtrends.com"
-                  className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block max-w-full break-words [overflow-wrap:anywhere]"
+                  className="text-xs sm:text-[12px] xl:text-[13px] font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block break-all [overflow-wrap:anywhere]"
+                  title="support@multinewtrends.com"
                 >
                   support@multinewtrends.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 box-border">
-              <Phone className="w-4 h-4 text-[#FA4C00] shrink-0" />
+            <div className="flex items-start sm:items-center gap-2.5 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 overflow-hidden shadow-sm">
+              <Phone className="w-4 h-4 text-[#FA4C00] shrink-0 mt-0.5 sm:mt-0" />
               <div className="min-w-0 flex-1">
-                <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Phone</span>
+                <span className="text-[10px] sm:text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Phone</span>
                 <a
                   href="tel:+919992125566"
-                  className="font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block max-w-full truncate"
+                  className="text-xs sm:text-[12px] xl:text-[13px] font-semibold text-[#111111] hover:text-[#FA4C00] transition-colors block truncate"
                 >
                   +91 9992125566
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 box-border">
-              <MapPin className="w-4 h-4 text-[#FA4C00] shrink-0" />
+            <div className="flex items-start sm:items-center gap-2.5 p-3 rounded-xl bg-white border border-[#E8DFC9] min-w-0 overflow-hidden shadow-sm">
+              <MapPin className="w-4 h-4 text-[#FA4C00] shrink-0 mt-0.5 sm:mt-0" />
               <div className="min-w-0 flex-1">
-                <span className="text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Location</span>
-                <span className="font-semibold text-[#111111] block max-w-full truncate">India</span>
+                <span className="text-[10px] sm:text-[11px] text-[#777777] block font-medium uppercase tracking-wider">Location</span>
+                <span className="text-xs sm:text-[12px] xl:text-[13px] font-semibold text-[#111111] block truncate">India</span>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-[#777777] italic pt-1">
-            * These are draft contact details for legal review and will be updated with final registered entity information.
+            * Grievance inquiries are acknowledged within 48 hours and addressed within 30 days pursuant to the DPDP Act, 2023. Related policies: <Link href="/privacy" className="text-[#FA4C00] underline font-semibold">Privacy Policy</Link>, <Link href="/security" className="text-[#FA4C00] underline font-semibold">Security Policy</Link>, and <Link href="/delete-account" className="text-[#FA4C00] underline font-semibold">Delete Account Policy</Link>.
           </p>
         </div>
       </section>
