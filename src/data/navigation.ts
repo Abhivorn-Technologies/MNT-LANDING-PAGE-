@@ -14,6 +14,12 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Contact", href: "/#contact", id: "contact" },
 ];
 
+export const APP_LINKS = {
+  userPlayStore: "https://play.google.com/store/apps/details?id=com.abhivorn.mntuser",
+  riderPlayStore: "https://play.google.com/store/apps/details?id=com.abhivorn.mntrider",
+  appStore: "https://apple.com/app-store",
+};
+
 export const FOOTER_LINKS = {
   company: [
     { label: "About Us", href: "/#about" },
@@ -23,6 +29,7 @@ export const FOOTER_LINKS = {
   forBusiness: [
     { label: "Become a Vendor", href: "/#vendor" },
     { label: "Become a Rider", href: "/#rider" },
+    { label: "Rider App (Play Store)", href: "https://play.google.com/store/apps/details?id=com.abhivorn.mntrider" },
     { label: "Partner With Us", href: "/#contact" },
   ],
   support: [

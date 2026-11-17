@@ -23,6 +23,11 @@ export const siteConfig = {
     linkedin: 'https://www.linkedin.com/in/multinewtrends/',
     youtube: 'https://www.youtube.com/@multinewtrends',
   },
+  appLinks: {
+    userPlayStore: 'https://play.google.com/store/apps/details?id=com.abhivorn.mntuser',
+    riderPlayStore: 'https://play.google.com/store/apps/details?id=com.abhivorn.mntrider',
+    appStore: 'https://apple.com/app-store',
+  },
   categories: [
     'Grocery',
     'Electronics',

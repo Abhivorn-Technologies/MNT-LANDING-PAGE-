@@ -4,7 +4,8 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { RIDER_FEATURES } from "@/data/features";
-import { Bike, ArrowRight, CheckCircle2 } from "lucide-react";
+import { APP_LINKS } from "@/data/navigation";
+import { Bike, ArrowRight, CheckCircle2, Smartphone } from "lucide-react";
 
 export const RiderSection: React.FC = () => {
   return (
@@ -95,9 +96,26 @@ export const RiderSection: React.FC = () => {
             </div>
 
             {/* CTA */}
-            <div className="pt-4">
+            <div className="pt-4 flex flex-wrap items-center gap-4">
+              <a
+                href={APP_LINKS.riderPlayStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white text-black hover:bg-mnt-cream hover:shadow-glow transition-all group duration-300 font-bold"
+              >
+                <Smartphone className="w-5 h-5 text-mnt-orange group-hover:scale-110 transition-transform" />
+                <div className="text-left">
+                  <span className="block text-[9px] uppercase font-bold tracking-wider text-black/60 leading-none">
+                    DOWNLOAD RIDER APP
+                  </span>
+                  <span className="block text-sm font-extrabold font-heading text-black leading-tight">
+                    Google Play
+                  </span>
+                </div>
+              </a>
+
               <Button
-                variant="primary"
+                variant="outline"
                 size="lg"
                 href="#contact"
                 icon={<ArrowRight className="w-5 h-5" />}

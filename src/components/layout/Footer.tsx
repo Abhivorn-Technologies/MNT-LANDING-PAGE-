@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { FOOTER_LINKS } from "@/data/navigation";
+import { FOOTER_LINKS, APP_LINKS } from "@/data/navigation";
 import { CookiePreferencesModal } from "@/components/legal/CookiePreferencesModal";
 import { OPEN_COOKIE_MODAL_EVENT } from "@/lib/cookieConsent";
 import {
@@ -16,6 +16,7 @@ import {
   Smartphone,
   ShieldCheck,
   Heart,
+  Bike,
 } from "lucide-react";
 
 export const Footer: React.FC = () => {
@@ -137,27 +138,33 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* App Download Badges */}
-            <div className="pt-2 flex items-center gap-3 flex-wrap">
-              <Link
-                href="/#download"
+            <div className="pt-2 flex items-center gap-2.5 flex-wrap">
+              <a
+                href={APP_LINKS.userPlayStore}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#FA4C00]/50 hover:bg-white/[0.06] transition-all group"
+                title="Download MNT User App on Google Play"
               >
                 <Smartphone className="w-4 h-4 text-[#FA4C00] group-hover:scale-110 transition-transform" />
                 <div className="flex flex-col text-left">
-                  <span className="text-[9px] text-mnt-muted uppercase font-medium leading-none">Get it on</span>
+                  <span className="text-[9px] text-mnt-muted uppercase font-medium leading-none">User App</span>
                   <span className="text-xs font-bold text-white leading-tight">Google Play</span>
                 </div>
-              </Link>
-              <Link
-                href="/#download"
+              </a>
+              <a
+                href={APP_LINKS.riderPlayStore}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#FFBD59]/50 hover:bg-white/[0.06] transition-all group"
+                title="Download MNT Rider App on Google Play"
               >
-                <Smartphone className="w-4 h-4 text-[#FFBD59] group-hover:scale-110 transition-transform" />
+                <Bike className="w-4 h-4 text-[#FFBD59] group-hover:scale-110 transition-transform" />
                 <div className="flex flex-col text-left">
-                  <span className="text-[9px] text-mnt-muted uppercase font-medium leading-none">Download on</span>
-                  <span className="text-xs font-bold text-white leading-tight">App Store</span>
+                  <span className="text-[9px] text-mnt-muted uppercase font-medium leading-none">Rider App</span>
+                  <span className="text-xs font-bold text-white leading-tight">Google Play</span>
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -186,16 +193,30 @@ export const Footer: React.FC = () => {
               For Business
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {FOOTER_LINKS.forBusiness.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-mnt-muted hover:text-white transition-colors duration-200 inline-block py-0.5"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {FOOTER_LINKS.forBusiness.map((link) => {
+                const isExternal = link.href.startsWith("http");
+                return (
+                  <li key={link.label}>
+                    {isExternal ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-mnt-muted hover:text-white transition-colors duration-200 inline-block py-0.5"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-mnt-muted hover:text-white transition-colors duration-200 inline-block py-0.5"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

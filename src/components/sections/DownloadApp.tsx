@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { Smartphone, Download, QrCode, Star, ShieldCheck, Check } from "lucide-react";
+import { Smartphone, Download, QrCode, Star, ShieldCheck, Check, Bike } from "lucide-react";
+import { APP_LINKS } from "@/data/navigation";
 
 export const DownloadApp: React.FC = () => {
   return (
@@ -36,8 +37,9 @@ export const DownloadApp: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-3">
                 {/* Store buttons */}
                 <div className="flex flex-col gap-3 w-full sm:w-auto">
+                  {/* User App (Google Play) */}
                   <a
-                    href="https://play.google.com"
+                    href={APP_LINKS.userPlayStore}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3.5 px-6 py-3.5 rounded-2xl bg-white text-black hover:bg-mnt-cream hover:shadow-glow transition-all group duration-300"
@@ -45,7 +47,7 @@ export const DownloadApp: React.FC = () => {
                     <Smartphone className="w-6 h-6 text-mnt-orange group-hover:scale-110 transition-transform" />
                     <div className="text-left">
                       <span className="block text-[10px] uppercase font-bold tracking-wider text-black/60">
-                        GET IT ON
+                        GET USER APP ON
                       </span>
                       <span className="block text-base font-extrabold font-heading text-black leading-none">
                         Google Play
@@ -53,19 +55,38 @@ export const DownloadApp: React.FC = () => {
                     </div>
                   </a>
 
+                  {/* Rider App (Google Play) */}
                   <a
-                    href="https://apple.com/app-store"
+                    href={APP_LINKS.riderPlayStore}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3.5 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-mnt-orange/50 text-white transition-all group duration-300"
                   >
-                    <Smartphone className="w-6 h-6 text-mnt-orange-light group-hover:scale-110 transition-transform" />
+                    <Bike className="w-6 h-6 text-mnt-orange-light group-hover:scale-110 transition-transform" />
                     <div className="text-left">
                       <span className="block text-[10px] uppercase font-bold tracking-wider text-white/60">
-                        DOWNLOAD ON THE
+                        GET RIDER APP ON
                       </span>
                       <span className="block text-base font-extrabold font-heading text-white leading-none">
-                        App Store
+                        Google Play
+                      </span>
+                    </div>
+                  </a>
+
+                  {/* App Store (iOS) */}
+                  <a
+                    href={APP_LINKS.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3.5 px-6 py-2.5 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-white/80 transition-all group duration-300"
+                  >
+                    <Smartphone className="w-5 h-5 text-white/50 group-hover:scale-110 transition-transform" />
+                    <div className="text-left">
+                      <span className="block text-[9px] uppercase font-bold tracking-wider text-white/40">
+                        DOWNLOAD ON THE
+                      </span>
+                      <span className="block text-sm font-bold font-heading text-white/90 leading-none">
+                        App Store (iOS)
                       </span>
                     </div>
                   </a>
